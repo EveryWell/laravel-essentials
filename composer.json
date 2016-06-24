@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": ">=5.5.9",
-    "lucadegasperi/oauth2-server-laravel": ">=5.1.*"
+    "lucadegasperi/oauth2-server-laravel": "5.1.*"
   },
   "require-dev": {
   },
