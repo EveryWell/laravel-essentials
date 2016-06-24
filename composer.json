@@ -1,0 +1,30 @@
+{
+  "name": "everywell/laravel-essentials",
+  "description": "",
+  "keywords": ["laravel", "essentials"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrea Ognibene",
+      "email": "aneverywell@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "lucadegasperi/oauth2-server-laravel": ">=5.1.*"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Essentials\\Oauth\\": "src/"
+    }
+  },
+  "autoload-dev": {
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1"
+    }
+  }
+}
