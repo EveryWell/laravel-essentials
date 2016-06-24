@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Essentials\\Oauth\\": "src/"
+      "Essentials\\Oauth\\": "oauth/src/"
     }
   },
   "autoload-dev": {
