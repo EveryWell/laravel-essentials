@@ -1,6 +1,6 @@
 <?php
 
-namespace Essentials\Oauth\Services;
+namespace Essentials\OAuth\Services;
 
 use Illuminate\Auth\GuardHelpers;
 use Illuminate\Http\Request;

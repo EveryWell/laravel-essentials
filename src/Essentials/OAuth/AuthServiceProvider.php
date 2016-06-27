@@ -1,8 +1,8 @@
 <?php
 
-namespace Essentials\Oauth;
+namespace Essentials\OAuth;
 
-use Essentials\Oauth\Services\OAuthGuard;
+use Essentials\OAuth\Services\OAuthGuard;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
