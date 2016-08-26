@@ -23,8 +23,9 @@ class OAuthGuard implements Guard
     /**
      * Create a new authentication guard.
      *
-     * @param  \Illuminate\Contracts\Auth\UserProvider  $provider
-     * @param  \Illuminate\Http\Request                 $request
+     * @param \Illuminate\Contracts\Auth\UserProvider $provider
+     * @param \Illuminate\Http\Request                $request
+     *
      * @return void
      */
     public function __construct(UserProvider $provider, Request $request)
@@ -52,7 +53,6 @@ class OAuthGuard implements Guard
         try {
             $user = $this->provider->retrieveById(Authorizer::getResourceOwnerId());
         } catch (NoActiveAccessTokenException $e) {
-
         }
 
         $this->user = $user;
@@ -80,6 +80,7 @@ class OAuthGuard implements Guard
      * Retrieve a user's by its credentials.
      *
      * @param array $credentials
+     *
      * @return \Illuminate\Contracts\Auth\Authenticatable|null
      */
     public function retrieveByCredentials(array $credentials = [])
@@ -103,8 +104,8 @@ class OAuthGuard implements Guard
         $user = $this->provider->retrieveById($id);
 
         if (!is_null($user)) {
-            $this->request['user_id']       = $user->id;
-            $this->request['grant_type']    = 'forced';
+            $this->request['user_id'] = $user->id;
+            $this->request['grant_type'] = 'forced';
 
             return Authorizer::issueAccessToken();
         }
