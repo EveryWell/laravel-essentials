@@ -16,7 +16,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         Auth::extend('oauth', function($app, $name, array $config) {
-
             return new OAuthGuard(Auth::createUserProvider($config['provider']), $this->app['request']);
         });
     }
