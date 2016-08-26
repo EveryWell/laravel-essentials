@@ -1,6 +1,6 @@
 <?php
 /**
- * OAuth 2.0 Password grant
+ * OAuth 2.0 Password grant.
  *
  * @package     league/oauth2-server
  * @author      Alex Bilbie <hello@alexbilbie.com>
@@ -26,35 +26,35 @@ use League\OAuth2\Server\Util\SecureKey;
 class ForcedGrant extends AbstractGrant
 {
     /**
-     * Grant identifier
+     * Grant identifier.
      *
      * @var string
      */
     protected $identifier = 'forced';
 
     /**
-     * Response type
+     * Response type.
      *
      * @var string
      */
     protected $responseType;
 
     /**
-     * Callback to authenticate a user's name and password
+     * Callback to authenticate a user's name and password.
      *
      * @var callable
      */
     protected $callback;
 
     /**
-     * Access token expires in override
+     * Access token expires in override.
      *
      * @var int
      */
     protected $accessTokenTTL;
 
     /**
-     * Complete the password grant
+     * Complete the password grant.
      *
      * @return array
      *

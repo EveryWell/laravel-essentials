@@ -3,9 +3,9 @@
 namespace Essentials\OAuth\Services;
 
 use Illuminate\Auth\GuardHelpers;
-use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\UserProvider;
+use Illuminate\Http\Request;
 use LucaDegasperi\OAuth2Server\Exceptions\NoActiveAccessTokenException;
 use LucaDegasperi\OAuth2Server\Facades\Authorizer;
 
@@ -24,13 +24,13 @@ class OAuthGuard implements Guard
      * Create a new authentication guard.
      *
      * @param  \Illuminate\Contracts\Auth\UserProvider  $provider
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request                 $request
      * @return void
      */
     public function __construct(UserProvider $provider, Request $request)
     {
         $this->provider = $provider;
-        $this->request  = $request;
+        $this->request = $request;
     }
 
     /**
@@ -43,7 +43,7 @@ class OAuthGuard implements Guard
         // If we've already retrieved the user for the current request we can just
         // return it back immediately. We do not want to fetch the user data on
         // every call to this method because that would be tremendously slow.
-        if (! is_null($this->user)) {
+        if (!is_null($this->user)) {
             return $this->user;
         }
 
@@ -63,7 +63,8 @@ class OAuthGuard implements Guard
     /**
      * Validate a user's credentials.
      *
-     * @param  array  $credentials
+     * @param array $credentials
+     *
      * @return bool
      */
     public function validate(array $credentials = [])
@@ -91,16 +92,17 @@ class OAuthGuard implements Guard
     /**
      * Log the given user ID into the application.
      *
-     * @param  mixed $id
+     * @param mixed $id
+     *
      * @return \Illuminate\Contracts\Auth\Authenticatable
+     *
      * @internal param bool $remember
      */
     public function tokenById($id)
     {
         $user = $this->provider->retrieveById($id);
 
-        if (! is_null($user)) {
-
+        if (!is_null($user)) {
             $this->request['user_id']       = $user->id;
             $this->request['grant_type']    = 'forced';
 
