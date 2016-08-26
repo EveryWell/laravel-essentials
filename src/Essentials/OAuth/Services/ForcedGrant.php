@@ -2,13 +2,12 @@
 /**
  * OAuth 2.0 Password grant.
  *
- * @package     league/oauth2-server
  * @author      Alex Bilbie <hello@alexbilbie.com>
  * @copyright   Copyright (c) Alex Bilbie
  * @license     http://mit-license.org/
+ *
  * @link        https://github.com/thephpleague/oauth2-server
  */
-
 namespace Essentials\OAuth\Services;
 
 use League\OAuth2\Server\Entity\AccessTokenEntity;
@@ -21,7 +20,7 @@ use League\OAuth2\Server\Grant\AbstractGrant;
 use League\OAuth2\Server\Util\SecureKey;
 
 /**
- * Password grant class
+ * Password grant class.
  */
 class ForcedGrant extends AbstractGrant
 {
@@ -56,9 +55,9 @@ class ForcedGrant extends AbstractGrant
     /**
      * Complete the password grant.
      *
-     * @return array
-     *
      * @throws
+     *
+     * @return array
      */
     public function completeFlow()
     {
